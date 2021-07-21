@@ -20,15 +20,18 @@ class Rope {
   display() {
     if (this.rope.bodyA) {
       var pointA = this.rope.bodyA.position;
-      var pointB = this.pointB;
-      push();
+      var pointB = this.rope.bodyB.position;
 
-      stroke(48, 22, 8);
-      strokeWeight(5);
+      strokeWeight(2);
 
-      line(pointB.x, pointB.y, pointA.x, pointA.y);
+      var Anchor1X = pointA.x
+      var Anchor1Y = pointA.y
+      
+      var Anchor2X = pointB.x+this.offsetX
+      var Anchor2Y = pointB.y+this.offsetY
 
-      pop();
-    }
+      line(Anchor1X, Anchor1Y, Anchor2X, Anchor2Y)
+    
+  }
   }
 }
