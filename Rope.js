@@ -1,11 +1,10 @@
 class Rope {
-  constructor(body1, body2, offsetX, offsetY) {
-    this.offsetX = offsetX
-    this.offsetY = offsetY
+  constructor(bodyA, pointB) {
     var options = {
-      bodyA: body1,
-      bodyB: body2,
-      pointB:{x: this.offsetX, y:this.offsetY}
+      bodyA: bodyA,
+      pointB: pointB,
+      stiffness: 1.2,
+      length: 300,
     };
 
     this.pointB = pointB;
@@ -20,18 +19,15 @@ class Rope {
   display() {
     if (this.rope.bodyA) {
       var pointA = this.rope.bodyA.position;
-      var pointB = this.rope.bodyB.position;
+      var pointB = this.pointB;
+      push();
 
-      strokeWeight(2);
+      stroke(48, 22, 8);
+      strokeWeight(5);
 
-      var Anchor1X = pointA.x
-      var Anchor1Y = pointA.y
-      
-      var Anchor2X = pointB.x+this.offsetX
-      var Anchor2Y = pointB.y+this.offsetY
+      line(pointB.x, pointB.y, pointA.x, pointA.y);
 
-      line(Anchor1X, Anchor1Y, Anchor2X, Anchor2Y)
-    
-  }
+      pop();
+    }
   }
 }

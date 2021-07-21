@@ -27,11 +27,11 @@ World.add(world, bob2);
 World.add(world, bob3);
 World.add(world, bob4);
 World.add(world, bob5);
-rope1 = new Rope(bob1.body, {x: 350, y: 200})
+rope1 = new Rope(bob1.body, {x: 340, y: 200})
 rope2 = new Rope(bob2.body, {x: 400, y: 200})
-rope3 = new Rope(bob3.body, {x: 450, y: 200})
-rope4 = new Rope(bob4.body, {x: 500, y: 200})
-rope5 = new Rope(bob5.body, {x: 550, y: 200})
+rope3 = new Rope(bob3.body, {x: 460, y: 200})
+rope4 = new Rope(bob4.body, {x: 520, y: 200})
+rope5 = new Rope(bob5.body, {x: 580, y: 200})
 World.add(world, rope1);
 World.add(world, rope2);
 World.add(world, rope3);
@@ -65,7 +65,7 @@ function draw() {
 
 function lift() {
 if (keyCode === UP_ARROW) {
-  Matter.Body.applyForce(bob5.body,bob5.body.position,{x:0.01});
+  Matter.Body.applyForce(bob5.body,bob5.body.position,{x: 0.00000001});
 }
 }
 
